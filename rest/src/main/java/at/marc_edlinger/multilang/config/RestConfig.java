@@ -12,4 +12,10 @@ public class RestConfig {
 
     private String[] adminToken = new String[]{"asd", "fgh"};
 
+    private String sqlHost = "localhost";
+    private String sqlUserName = "admin";
+    private String sqlPassword = "asd";
+    private String sqlDatabase = "rest";
+    private int sqlPort = 3306;
+
 }

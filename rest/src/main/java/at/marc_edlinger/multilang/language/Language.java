@@ -1,6 +1,8 @@
 package at.marc_edlinger.multilang.language;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.persistence.Table;
 @Entity
 @Data
 @Table(name = "languages")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Language {
 
     @Id

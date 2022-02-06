@@ -3,7 +3,6 @@ package at.marc_edlinger.multilang.language;
 import at.marc_edlinger.multilang.config.KeyValidator;
 import at.marc_edlinger.multilang.exception.ErrorCode;
 import at.marc_edlinger.multilang.exception.RestException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,10 +12,14 @@ import java.util.List;
 @RequestMapping(
         path = "api/v1/lang/{key}/"
 )
-@RequiredArgsConstructor(onConstructor_ = {@Autowired})
 public class LanguageRestController {
 
     private final LanguageRepository repository;
+
+    @Autowired
+    public LanguageRestController(LanguageRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("list")
     public List<Language> getLanguages(@PathVariable String key) throws RestException {

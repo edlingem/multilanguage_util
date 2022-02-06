@@ -1,24 +1,19 @@
 package at.marc_edlinger.multilang.language;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Data
-@Table(name = "languages")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Language {
 
     @Id
     @Column(nullable = false)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String displayName;
 
